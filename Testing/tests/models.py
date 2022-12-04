@@ -1,3 +1,17 @@
 from django.db import models
 
-# Create your models here.
+
+class Themes(models.Model):
+    pass
+
+
+class Tests(models.Model):
+    pass
+
+
+class Answers(models.Model):
+    pass
+
+
+class TestSets(models.Model):
+    pass
