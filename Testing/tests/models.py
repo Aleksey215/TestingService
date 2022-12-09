@@ -46,7 +46,6 @@ class Question(models.Model):
     question_content = models.TextField()
     answered = models.BooleanField(default=False)
     test = models.ForeignKey(Test, on_delete=models.CASCADE)
-    ans = models.ManyToManyField('Answer', v)
 
     def __str__(self):
         return self.question_name
