@@ -1,9 +1,10 @@
 from django.urls import path
 
-from .views import SetsListView, SetDetail, TestsListView
+from .views import SetsListView, SetDetail, TestDetailView, QuestionDetail
 
 urlpatterns = [
     path('', SetsListView.as_view(), name='sets_list'),
-    path('tests/<int:pk>/', SetDetail.as_view(), name='set_detail'),
-    path('tests/', TestsListView.as_view(), name='tests_list'),
+    path('set/<int:pk>', SetDetail.as_view(), name='set_detail'),
+    path('test/<int:pk>', TestDetailView.as_view(), name='test_detail'),
+    path('question/<int:pk>', QuestionDetail.as_view(), name='question'),
 ]

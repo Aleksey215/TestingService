@@ -20,11 +20,13 @@ Tests
    a {
     text-decoration: none; /* Отменяем подчеркивание у ссылки */
    }
+
 </style>
 
-{% for test in tests %}
-<h1>{{ test.set }}</h1><hr>
-{{ test }}
-{% endfor %}
+{{ first_question }}
+<br>
+<button type="submit" class="btn btn-success">
+    <a href="{% url 'question' first_question.id %}" style="color:white">Next question</a>
+</button>
 
 {% endblock %}

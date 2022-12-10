@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-Set Detail
+Test Set
 {% endblock %}
 
 {% block content %}
@@ -23,6 +23,13 @@ Set Detail
     text-decoration: none; /* Отменяем подчеркивание у ссылки */
    }
   </style>
-Hello
+{% for test in tests %}
+<p align="left">
+<h2>{{ test }}</h2>
+<button type="submit" class="btn btn-success">
+ <a href="{% url 'test_detail' test.id %}" style="color:white">Start testing</a>
+</button>
+</p>
+{% endfor %}
 
 {% endblock %}

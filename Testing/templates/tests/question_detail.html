@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+Question
+{% endblock %}
+
+{% block content %}
+<style>
+   table {
+    width: 100%; /* Ширина таблицы */
+    border: 10px;
+   }
+   td, th {
+    padding: 5px; /* Поля вокруг текста */
+    border: 10px;
+    vertical-align: 10px;
+   }
+   a {
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+   }
+</style>
+Hello from question
+{% endblock %}
