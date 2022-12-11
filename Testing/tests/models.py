@@ -57,6 +57,7 @@ class Answer(models.Model):
     """
     answer_content = models.TextField()
     correct = models.BooleanField(default=False)
+    selected = models.BooleanField(default=False)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
 
     def __str__(self):

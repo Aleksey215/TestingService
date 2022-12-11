@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-Tests
+Questions
 {% endblock %}
 
 {% block content %}
@@ -20,8 +20,10 @@ Tests
    a {
     text-decoration: none; /* Отменяем подчеркивание у ссылки */
    }
-
 </style>
 
+{% for question in questions %}
+{{ question.test }}<br>
+{% endfor %}
 
 {% endblock %}

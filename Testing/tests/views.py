@@ -28,12 +28,18 @@ class TestDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         id = self.kwargs.get('pk')
-        context['first_question'] = Question.objects.filter(test=id)[0]
-        context['second_question'] = Question.objects.filter(test=id)[0]
-        context['answers'] = Answer.objects.all()
+        question = Question.objects.filter(test=id, answered=False)[0]
+        context['active_question'] = question
+        context['answers'] = Answer.objects.filter(question=question)
         return context
 
 
 class QuestionDetail(DetailView):
     model = Question
     template_name = 'tests/question_detail.html'
+
+
+class Questions(ListView):
+    model = Question
+    template_name = 'tests/questions.html'
+    context_object_name = 'questions'
