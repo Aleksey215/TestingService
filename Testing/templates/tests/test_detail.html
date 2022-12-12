@@ -22,6 +22,16 @@ Tests
    }
 
 </style>
-
+{{ active_question.question_name }}
+<br>
+{{ active_question.question_content }}
+{% for answer in answers %}
+<form method="post">
+    {{ answer.answer_content }}
+    {% csrf_token %}
+    {{ answer_form|crispy }}
+    <br>
+</form>
+{% endfor %}
 
 {% endblock %}

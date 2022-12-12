@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
 from .models import Answer, Question, Set, Test, Theme
+from .forms import AnswerForm
 
 
 class SetsListView(ListView):
@@ -31,6 +32,7 @@ class TestDetailView(DetailView):
         question = Question.objects.filter(test=id, answered=False)[0]
         context['active_question'] = question
         context['answers'] = Answer.objects.filter(question=question)
+        context['answer_form'] = AnswerForm()
         return context
 
 
